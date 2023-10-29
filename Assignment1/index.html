@@ -1,99 +1,53 @@
-
-<!DOCTYPE html>
-<html lang ="en">
-
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-    h1, p{
-    text-align: center;
-    }
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-    }
-  
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-  
-    .container {
-        display: flex;
-        flex-direction: column;
-        width: 25vw;
-    } 
-    h1, p {
-        text-align: center;
-    }
-  
-    input {
-        margin: 0.25em 0em 1em 0em;
-    }
-
-    input {
-        margin: 0.25em 0em 1em 0em;
-        outline: none;
-        padding: 0.5em;
-        border: none;
-        background-color: rgb(225, 225, 225);
-        border-radius: 0.25em;
-        color: black;
-    }
-  
-    button {
-        padding: 0.75em;
-        border: none;
-        outline: none;
-        background-color: rgb(68, 18, 232);
-        color: white;
-        border-radius: 0.25em;
-    }
-  
-    button:hover {
-        cursor: pointer;
-        background-color: rgb(41, 4, 164);
-    }
-    </style>
-
-    </style>
-    <title>Change Color</title>
+<title> Color Flipper </title>
+<style>
+h1{padding-top:50px;font-family:Roboto;}
+div{font-family:Roboto;border-width:5px; border-color:black;}
+#btn{font-family:Roboto; font-size:0.45cm;background-color:yellow;border-radius: 5px;}
+</style>
 </head>
-
 <body>
 
-    <form>
-      <div class="container">
-        <h1>Login</h1>
-        <p>Kindly fill in this form to register.</p>
-        <label for="email"><b>Email</b></label>
-        <input
-          type="text"
-          placeholder="Enter Email"
-          name="email"
-          id="email"
-          required
-        />
+<script type="text/javascript">
+	var i=0;
+	var col=new Array("red","green","orange","blue","yellow","purple","white","brown","cyan");
+	function change()
+	{
+		document.body.style.backgroundColor=col[i];
+		i++;
+		if(i>col.length)
+		{
+			i=0;
+		}
+		window.setTimeout("change()",750);
+	}
+	window.onload=change();
+	
+	function display()
+	{
+		alert("Record Inserted");
+	}
 
-        <label for="pwd"><b>Password</b></label>
-        <input
-          type="password"
-          placeholder="Enter Password"
-          name="pwd"
-          id="pwd"
-          required
-        />
-        <button type="submit">Register</button>
-    </form>
-    <script>
-      var colors=["#e88f84", "#e8bb84", "#d2e884"];
-      function changeClr()
-      {
-          var select_color=colors[Math.floor(Math.random()*colors.length())];
-          document.body.style.backgroundColor=select_color;
-      }
-      setInterval(changeClr,1000);
-    </script>
+</script>
+<center>
+<div style="padding:30px;border-width: 5px;border-style: dashed;">
+<h1><i><big> Registration Page</big></i> </h1></br></br></br></br>
+
+<label for="name">Name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+<input type="text" name="name" required></br></br>
+
+<label for="age">Age     &nbsp</label>
+<input type="text" name="age" required></br></br>
+
+<label for="college">College&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+<input type="text" name="college" required></br></br>
+
+<label for="Address">Password&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+<input type="text" name="Address" required></br></br></br></br>
+
+<input type="submit" id="btn" value="Register" onclick="display()"></br></br>
+</div>
+</center>
 </body>
+</html>
